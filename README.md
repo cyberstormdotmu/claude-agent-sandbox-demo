@@ -6,9 +6,8 @@ A Next.js chat application demonstrating secure AI agent architecture with sandb
 
 This repository accompanies my Medium blog post:
 
-**[Building Secure AI Agents with Claude and Sandboxed Code Execution](https://medium.com/@jasimea/TODO)**
+**[The Scary Return of eval(): Architecting Safe AI Agents](https://medium.com/@jasim/the-scary-return-of-eval-architecting-safe-ai-agents-5d057c56a4ae)**
 
-<!-- TODO: Replace with actual Medium URL -->
 
 ## Overview
 
@@ -148,34 +147,6 @@ src/
     ├── security-profiles.ts  # Sandbox configurations
     └── utils.ts              # Utility functions
 ```
-
-## Troubleshooting
-
-### "Permission denied" errors
-- Ensure Python is installed and accessible in your PATH
-- On Linux, verify bubblewrap is installed: `which bwrap`
-
-### "Network blocked" errors
-- This is expected behavior! The sandbox blocks most network access
-- Only PyPI is allowed for package installation
-
-### Slow first execution
-- The first execution may be slow as packages (pandas, matplotlib) are installed
-- Subsequent executions will be faster
-
-### Images not displaying
-- Ensure your code saves images with `plt.savefig('filename.png')`
-- Call `plt.close()` after saving to free memory
-
-## Security Considerations
-
-This demo is designed for educational purposes. For production use:
-
-- Implement proper authentication
-- Add rate limiting
-- Consider per-user sandbox isolation
-- Monitor resource usage
-- Implement audit logging
 
 ## Resources
 
